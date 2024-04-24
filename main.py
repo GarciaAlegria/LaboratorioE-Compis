@@ -5,6 +5,7 @@ from arbol import SyntacticTree
 from dfa_directly import DFA
 from Def import Definition
 from Simulate import Simulation
+from readyalp import Yalp
 
 test_yalex = "./yalex/slr-1.yal"
 
@@ -12,6 +13,14 @@ test_yalex = "./yalex/slr-1.yal"
 print("\n===========================================================================================")
 print("\nBienvenido al Laboratorio E de Compiladores\n")
 print("===========================================================================================\n")
+
+with open(test_yalp) as f:
+    testLines = f.readlines()
+
+start_time = time.time()
+
+regex, token_functions = Yalex(yalex).read_yalex()
+
 
 post = Postfix(regex)
 postfix = post.shunting_yard()
@@ -56,7 +65,7 @@ python_file.create_scanner_output()
 print(f"\nsimulacion: {sim}\n")
 
 
-from Scanner import *
+from scann import *
 
 output_scanner(sim)
 
