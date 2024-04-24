@@ -7,7 +7,9 @@ from Def import Definition
 from Simulate import Simulation
 from readyalp import Yalp
 
+yalex = "./yalex/yalp_analyzer.yal"
 test_yalex = "./yalex/slr-1.yal"
+test_yalp = "./yalp/slr-1.yalp"
 
 
 print("\n===========================================================================================")
