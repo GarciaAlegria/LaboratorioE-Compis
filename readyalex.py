@@ -20,7 +20,7 @@ class Yalex(object):
         for l in lines:
             if activation:
                 if l == "|":
-                    if regex[len(regex)-1] == "|":
+                    if regex and regex[-1] == "|":
                         word += l
                         pass
                     else:

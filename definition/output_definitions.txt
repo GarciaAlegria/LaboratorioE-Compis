@@ -1,0 +1,72 @@
+['%token', '%token'] ==> Definicion: %token
+['ws', ' '] ==> Definicion: empty
+['minusword', 'ws'] ==> Definicion: min
+['ws', '\n'] ==> Definicion: empty
+['%token', '%token'] ==> Definicion: %token
+['ws', ' '] ==> Definicion: empty
+['minusword', 'id'] ==> Definicion: min
+['ws', '\n'] ==> Definicion: empty
+['%token', '%token'] ==> Definicion: %token
+['ws', ' '] ==> Definicion: empty
+['minusword', 'plus'] ==> Definicion: min
+['ws', '\n'] ==> Definicion: empty
+['%token', '%token'] ==> Definicion: %token
+['ws', ' '] ==> Definicion: empty
+['minusword', 'lparen'] ==> Definicion: min
+['ws', ' '] ==> Definicion: empty
+['minusword', 'rparen'] ==> Definicion: min
+['ws', '\n'] ==> Definicion: empty
+['%token', '%token'] ==> Definicion: %token
+['ws', ' '] ==> Definicion: empty
+['minusword', 'times'] ==> Definicion: min
+['ws', '\n'] ==> Definicion: empty
+['IGNORE', 'IGNORE'] ==> Definicion: IGNORE
+['ws', ' '] ==> Definicion: empty
+['minusword', 'ws'] ==> Definicion: min
+['ws', '\n\n'] ==> Definicion: empty
+['%%', '%%'] ==> Definicion: %%
+['ws', '\n\n'] ==> Definicion: empty
+['minusword', 'expression'] ==> Definicion: min
+[':', ':'] ==> Definicion: :
+['ws', '\n    '] ==> Definicion: empty
+['minusword', 'expression'] ==> Definicion: min
+['ws', ' '] ==> Definicion: empty
+['minusword', 'plus'] ==> Definicion: min
+['ws', ' '] ==> Definicion: empty
+['minusword', 'term'] ==> Definicion: min
+['ws', '\n  '] ==> Definicion: empty
+['|', '|'] ==> Definicion: |
+['ws', ' '] ==> Definicion: empty
+['minusword', 'term'] ==> Definicion: min
+['ws', '\n'] ==> Definicion: empty
+[';', ';'] ==> Definicion: ;
+['ws', '\n'] ==> Definicion: empty
+['minusword', 'term'] ==> Definicion: min
+[':', ':'] ==> Definicion: :
+['ws', '\n    '] ==> Definicion: empty
+['minusword', 'term'] ==> Definicion: min
+['ws', ' '] ==> Definicion: empty
+['minusword', 'times'] ==> Definicion: min
+['ws', ' '] ==> Definicion: empty
+['minusword', 'factor'] ==> Definicion: min
+['ws', '\n  '] ==> Definicion: empty
+['|', '|'] ==> Definicion: |
+['ws', ' '] ==> Definicion: empty
+['minusword', 'factor'] ==> Definicion: min
+['ws', '\n'] ==> Definicion: empty
+[';', ';'] ==> Definicion: ;
+['ws', '\n'] ==> Definicion: empty
+['minusword', 'factor'] ==> Definicion: min
+[':', ':'] ==> Definicion: :
+['ws', '\n    '] ==> Definicion: empty
+['minusword', 'lparen'] ==> Definicion: min
+['ws', ' '] ==> Definicion: empty
+['minusword', 'expression'] ==> Definicion: min
+['ws', ' '] ==> Definicion: empty
+['minusword', 'rparen'] ==> Definicion: min
+['ws', '\n  '] ==> Definicion: empty
+['|', '|'] ==> Definicion: |
+['ws', ' '] ==> Definicion: empty
+['minusword', 'id'] ==> Definicion: min
+['ws', '\n'] ==> Definicion: empty
+[';', ';'] ==> Definicion: ;

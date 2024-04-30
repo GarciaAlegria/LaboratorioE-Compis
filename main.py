@@ -6,6 +6,7 @@ from dfa_directly import DFA
 from Def import Definition
 from Simulate import Simulation
 from readyalp import Yalp
+from Parser import Parser
 
 yalex = "./yalex/yalp_analyzer.yal"
 test_yalex = "./yalex/slr-1.yal"
@@ -26,7 +27,8 @@ regex, token_functions = Yalex(yalex).read_yalex()
 
 post = Postfix(regex)
 postfix = post.shunting_yard()
-print("\npostfix: {postfix}\n")
+print("\npostfix:\n")
+print(postfix)
 
 
 tree = SyntacticTree(yalex)
@@ -47,15 +49,15 @@ print(f"\nLa construccion del arbol sintactico tuvo un tiempo de ejecucion de {t
 print("===========================================================================================\n")
 
 
-# Parte del laboratorio D
-
 dfa = DFA(result)
 direct= dfa.Dstate()
 
 dfa.visualize_dfa(direct[0], direct[1], 'yalp_analyzer.yal')
 
-
-print(f"\ntoken_functions: {token_functions}\n")
+print("===========================================================================================")
+print("tokens y funciones:")
+print("===========================================================================================")
+print(f"token_functions: {token_functions}\n")
     
 simulation = Simulation(direct[0], direct[1], testLines)
 sim = simulation.simulate()
@@ -64,7 +66,10 @@ python_file = Definition(token_functions)
 python_file.create_python()
 python_file.create_scanner_output()
 
-print(f"\nsimulacion: {sim}\n")
+print("===========================================================================================")
+print("simulacion:")
+print("===========================================================================================")
+print(f"simulacion: {sim}\n")
 
 
 from scann import *
