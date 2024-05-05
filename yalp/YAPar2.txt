@@ -1,0 +1,28 @@
+
+%token id
+%token plus
+%token minus
+%token times
+%token div
+%token number
+%token lparen rparen
+%token WHITESPACE
+IGNORE WHITESPACE
+
+%%
+
+expression:
+  | expression plus term
+  | expression minus term
+  | term
+;
+term:
+  | term times factor
+  | term div factor
+  | factor
+;
+factor:
+  | lparen expression rparen
+  | id
+  | number
+;

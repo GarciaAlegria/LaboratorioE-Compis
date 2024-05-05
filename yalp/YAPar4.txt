@@ -1,0 +1,27 @@
+
+%token a 
+%token b
+%token c
+%token d
+%token g
+%token h
+
+%%
+
+s:
+    | a c b
+    | c B B
+    | b A
+;
+a:
+    | D A
+    | b c
+;
+b:
+    | G
+    | epsilon
+;
+c:
+    | H
+    | epsilon
+;

@@ -172,7 +172,7 @@ class Yalp(object):
 
         output_filename = f"LR(0) of {name}" 
         
-        dot.render(f"./YalpProductions/{output_filename}", view=True, format='png')
+        dot.render(f"./Yalpspngs/{output_filename}", view=True, format='png')
 
     
     def show_graph(self, filename):

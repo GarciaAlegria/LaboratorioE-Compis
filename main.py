@@ -8,30 +8,43 @@ from Simulate import Simulation
 from readyalp import Yalp
 from Parser import Parser
 
-yalex = "./yalex/yalp_analyzer.yal"
-test_yalex = "./yalex/slr-1.yal"
-test_yalp = "./yalp/slr-1.yalp"
+#Laboratorio anterior  
+Myyalex = "./yalex/yalp_analyzer.yal"
+
+
+#Se puede cambiar el archivo de entrada para probar con otro archivo
+Myreadyalex = "./yalex/YaLex2.yal"
+Myreadyalp = "./yalp/YaPar2.txt"
 
 
 print("\n===========================================================================================")
 print("\nBienvenido al Laboratorio E de Compiladores\n")
 print("===========================================================================================\n")
 
-with open(test_yalp) as f:
+with open(Myreadyalp) as f:
     testLines = f.readlines()
 
 start_time = time.time()
 
-regex, token_functions = Yalex(yalex).read_yalex()
+regex, token_functions = Yalex(Myyalex).read_yalex()
 
 
 post = Postfix(regex)
+print("===========================================================================================")
+print("regex:")
+print("===========================================================================================")
+print(regex)
+print("===========================================================================================")
+
 postfix = post.shunting_yard()
-print("\npostfix:\n")
+print("===========================================================================================")
+print("postfix:")
+print("===========================================================================================")
 print(postfix)
+print("===========================================================================================")
 
 
-tree = SyntacticTree(yalex)
+tree = SyntacticTree(Myyalex)
 tree.tree_construction(postfix)
 tree.visualize_tree()
 
@@ -42,11 +55,9 @@ end_time = time.time()
 
 total_time = end_time - start_time
 
-print("\n===========================================================================================")
-
-print(f"\nLa construccion del arbol sintactico tuvo un tiempo de ejecucion de {total_time} segundos\n")
-
-print("===========================================================================================\n")
+print("===========================================================================================")
+print(f"\ntiempo de ejecucion del arbol es de {total_time} segundos")
+print("===========================================================================================")
 
 
 dfa = DFA(result)
@@ -67,6 +78,11 @@ python_file.create_python()
 python_file.create_scanner_output()
 
 print("===========================================================================================")
+print("Yalp interpreter:")
+print("===========================================================================================")
+print(f"Archivo Yalp: {sim}\n")
+
+print("===========================================================================================")
 print("simulacion:")
 print("===========================================================================================")
 print(f"simulacion: {sim}\n")
@@ -76,10 +92,10 @@ from scann import *
 
 output_scanner(sim)
 
-yalp = Yalp(test_yalex, sim)
+yalp = Yalp(Myreadyalex, sim)
 yalp.init_construction()
 yalp.subset_construction()
-yalp.show_graph('slr-1.yalp')
+yalp.show_graph('YaPar4.yalp')
 
 parse = Parser(yalp.transitions, yalp.subsets, yalp.subsets_num, yalp.subproductions)
 parse.construct_table()

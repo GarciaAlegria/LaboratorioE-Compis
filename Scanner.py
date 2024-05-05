@@ -1,4 +1,4 @@
-from productions import *
+from Production import *
 
 def scan(token):
     if token == 'ws':

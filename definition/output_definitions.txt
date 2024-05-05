@@ -1,6 +1,3 @@
-['%token', '%token'] ==> Definicion: %token
-['ws', ' '] ==> Definicion: empty
-['minusword', 'ws'] ==> Definicion: min
 ['ws', '\n'] ==> Definicion: empty
 ['%token', '%token'] ==> Definicion: %token
 ['ws', ' '] ==> Definicion: empty
@@ -12,23 +9,41 @@
 ['ws', '\n'] ==> Definicion: empty
 ['%token', '%token'] ==> Definicion: %token
 ['ws', ' '] ==> Definicion: empty
+['minusword', 'minus'] ==> Definicion: min
+['ws', '\n'] ==> Definicion: empty
+['%token', '%token'] ==> Definicion: %token
+['ws', ' '] ==> Definicion: empty
+['minusword', 'times'] ==> Definicion: min
+['ws', '\n'] ==> Definicion: empty
+['%token', '%token'] ==> Definicion: %token
+['ws', ' '] ==> Definicion: empty
+['minusword', 'div'] ==> Definicion: min
+['ws', '\n'] ==> Definicion: empty
+['%token', '%token'] ==> Definicion: %token
+['ws', ' '] ==> Definicion: empty
+['minusword', 'number'] ==> Definicion: min
+['ws', '\n'] ==> Definicion: empty
+['%token', '%token'] ==> Definicion: %token
+['ws', ' '] ==> Definicion: empty
 ['minusword', 'lparen'] ==> Definicion: min
 ['ws', ' '] ==> Definicion: empty
 ['minusword', 'rparen'] ==> Definicion: min
 ['ws', '\n'] ==> Definicion: empty
 ['%token', '%token'] ==> Definicion: %token
 ['ws', ' '] ==> Definicion: empty
-['minusword', 'times'] ==> Definicion: min
+['mayusword', 'WHITESPACE'] ==> Definicion: may
 ['ws', '\n'] ==> Definicion: empty
 ['IGNORE', 'IGNORE'] ==> Definicion: IGNORE
 ['ws', ' '] ==> Definicion: empty
-['minusword', 'ws'] ==> Definicion: min
+['mayusword', 'WHITESPACE'] ==> Definicion: may
 ['ws', '\n\n'] ==> Definicion: empty
 ['%%', '%%'] ==> Definicion: %%
 ['ws', '\n\n'] ==> Definicion: empty
 ['minusword', 'expression'] ==> Definicion: min
 [':', ':'] ==> Definicion: :
-['ws', '\n    '] ==> Definicion: empty
+['ws', '\n  '] ==> Definicion: empty
+['|', '|'] ==> Definicion: |
+['ws', ' '] ==> Definicion: empty
 ['minusword', 'expression'] ==> Definicion: min
 ['ws', ' '] ==> Definicion: empty
 ['minusword', 'plus'] ==> Definicion: min
@@ -37,16 +52,34 @@
 ['ws', '\n  '] ==> Definicion: empty
 ['|', '|'] ==> Definicion: |
 ['ws', ' '] ==> Definicion: empty
+['minusword', 'expression'] ==> Definicion: min
+['ws', ' '] ==> Definicion: empty
+['minusword', 'minus'] ==> Definicion: min
+['ws', ' '] ==> Definicion: empty
+['minusword', 'term'] ==> Definicion: min
+['ws', '\n  '] ==> Definicion: empty
+['|', '|'] ==> Definicion: |
+['ws', ' '] ==> Definicion: empty
 ['minusword', 'term'] ==> Definicion: min
 ['ws', '\n'] ==> Definicion: empty
 [';', ';'] ==> Definicion: ;
 ['ws', '\n'] ==> Definicion: empty
 ['minusword', 'term'] ==> Definicion: min
 [':', ':'] ==> Definicion: :
-['ws', '\n    '] ==> Definicion: empty
+['ws', '\n  '] ==> Definicion: empty
+['|', '|'] ==> Definicion: |
+['ws', ' '] ==> Definicion: empty
 ['minusword', 'term'] ==> Definicion: min
 ['ws', ' '] ==> Definicion: empty
 ['minusword', 'times'] ==> Definicion: min
+['ws', ' '] ==> Definicion: empty
+['minusword', 'factor'] ==> Definicion: min
+['ws', '\n  '] ==> Definicion: empty
+['|', '|'] ==> Definicion: |
+['ws', ' '] ==> Definicion: empty
+['minusword', 'term'] ==> Definicion: min
+['ws', ' '] ==> Definicion: empty
+['minusword', 'div'] ==> Definicion: min
 ['ws', ' '] ==> Definicion: empty
 ['minusword', 'factor'] ==> Definicion: min
 ['ws', '\n  '] ==> Definicion: empty
@@ -58,7 +91,9 @@
 ['ws', '\n'] ==> Definicion: empty
 ['minusword', 'factor'] ==> Definicion: min
 [':', ':'] ==> Definicion: :
-['ws', '\n    '] ==> Definicion: empty
+['ws', '\n  '] ==> Definicion: empty
+['|', '|'] ==> Definicion: |
+['ws', ' '] ==> Definicion: empty
 ['minusword', 'lparen'] ==> Definicion: min
 ['ws', ' '] ==> Definicion: empty
 ['minusword', 'expression'] ==> Definicion: min
@@ -68,5 +103,9 @@
 ['|', '|'] ==> Definicion: |
 ['ws', ' '] ==> Definicion: empty
 ['minusword', 'id'] ==> Definicion: min
+['ws', '\n  '] ==> Definicion: empty
+['|', '|'] ==> Definicion: |
+['ws', ' '] ==> Definicion: empty
+['minusword', 'number'] ==> Definicion: min
 ['ws', '\n'] ==> Definicion: empty
 [';', ';'] ==> Definicion: ;

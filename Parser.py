@@ -38,7 +38,7 @@ class Parser(object):
         for rule in self.rules:
             visited = [rule[0]]
             for y in visited:
-                new_visited = [z[1][0] for z in self.rules if y == z[0] and z[1][0] not in visited]
+                new_visited = [z[1][0] for z in self.rules if y == z[0] and z[1] and z[1][0] not in visited]
                 visited.extend(new_visited)
 
             self.first.append([rule[0], sorted(list(set(y for y in visited if y in self.action_rows)))])
@@ -55,6 +55,13 @@ class Parser(object):
                                 transaction = self.follow(trans_copy[0], first)
                                 self.action.extend([(i, w, "r" + str(j)) for w in transaction])
 
+        print("====================================================================================================")
+        print("Tabla de analisis sintactico")
+        print("====================================================================================================")
+        print("NOT TERMINALS: ", self.not_terminals)
+        print("STATES: ", self.state)
+        print("RULES: ", self.rules)
+        print("SETS: ", self.sets)
         print("FIRST: ", self.first)
         print("GOTO: ", self.goto)
         print("ACTION: ", self.action)
